@@ -7,8 +7,8 @@ function Jwt() {
 
   const getJWT = async () => {
     const res = await axios.get('http://localhost:4000/jwt');
-    setToken(res.data);
     console.log(res);
+    setToken(res.data.token);
   };
 
   const sendJWT = async () => {
