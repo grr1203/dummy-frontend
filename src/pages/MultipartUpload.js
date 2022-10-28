@@ -4,6 +4,7 @@ import axios from 'axios';
 function MultipartUpload() {
   const [token, setToken] = useState();
   const [file, setFile] = useState();
+  let modelUid;
 
   const getJWT = async () => {
     const res = await axios.get('http://localhost:4000/jwt');
@@ -36,7 +37,8 @@ function MultipartUpload() {
     });
     console.log(res);
     const urls = res.data.urls;
-    const modelUid = res.data.model_uid;
+    modelUid = res.data.model_uid;
+    console.log(modelUid);
 
     //send multipart data
     const maxPartNum = res.data.urls.length;
@@ -55,7 +57,15 @@ function MultipartUpload() {
     console.log(resolvedArray);
 
     //send complete signal
-    res = await customAxios.post(`${process.env.REACT_APP_API_PATH}/model/upload/complete`, {
+    res = await customAxios.post(`/model/upload/complete`, {
+      model_uid: modelUid,
+    });
+    console.log(res);
+  };
+
+  const abortMultipartUpload = async () => {
+    const customAxios = await getCustomAxios();
+    const res = await customAxios.post(`/model/upload/abort`, {
       model_uid: modelUid,
     });
     console.log(res);
@@ -71,6 +81,7 @@ function MultipartUpload() {
       <button onClick={getJWT}>get jwt</button>
       <input type="file" onChange={handleFileInput} />
       <button onClick={multipartUpload}>multipartUpload</button>
+      <button onClick={abortMultipartUpload}>abort multipartUpload</button>
     </div>
   );
 }
