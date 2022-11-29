@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function Jwt() {
-  const [modelUid, setModelUid] = useState(0);
+  const [modelUid] = useState(0);
   const [token, setToken] = useState();
 
   const getJWT = async () => {
@@ -12,8 +12,9 @@ function Jwt() {
   };
 
   const sendJWT = async () => {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     const res = await axios.get(`${process.env.REACT_APP_API_PATH}/model`, { params: { model_uid: modelUid } });
+    console.log(res);
   };
 
   return (
