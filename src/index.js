@@ -5,6 +5,7 @@ import App from './App';
 import Jwt from './pages/Jwt';
 import MultipartUpload from './pages/MultipartUpload';
 import Pay from './pages/Pay';
+import Chart from './pages/Chart'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
       <Route path="jwt" element={<Jwt />} />
       <Route path="/multipartupload" element={<MultipartUpload />} />
       <Route path="/pay/*" element={<Pay />} />
+      <Route path="/chart" element={<Chart />} />
     </Routes>
   </BrowserRouter>
 );
