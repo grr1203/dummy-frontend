@@ -5,7 +5,7 @@ import axios from 'axios';
 import { nanoid } from 'nanoid';
 
 function Pay() {
-  const clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq';
+  const clientKey = 'test_ck_D4yKeq5bgrpwRv5OglAVGX0lzW6Y';
   const [searchParams] = useSearchParams();
   const [amount, setAmount] = useState();
 
