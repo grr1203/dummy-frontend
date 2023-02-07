@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 
 function Billing({ token }) {
-  const clientKey = 'test_ck_D4yKeq5bgrpwRv5OglAVGX0lzW6Y';
+  const clientKey = 'test_ck_kZLKGPx4M3M666k5w1eVBaWypv1o';
   const [searchParams] = useSearchParams();
 
   //dummy backend에서 jwt를 받아온다
