@@ -38,6 +38,13 @@ function Login() {
   };
 
   const test = (password) => {
+    // 0. key pair 생성
+    // const keypair = forge.pki.rsa.generateKeyPair({ bits: 2048, e: 0x10001 });
+    // const privateKeyPem = forge.pki.privateKeyToPem(keypair.privateKey);
+    // const publicKeyPem = forge.pki.publicKeyToPem(keypair.publicKey);
+    // console.log('Private Key:\n', privateKeyPem);
+    // console.log('\nPublic Key:\n', publicKeyPem);
+
     // 1. 회원가입 시, 클라이언트에서 비밀번호를 입력하면, 클라이언트에서는 비밀번호 + salt를 서버의 공개 키로 암호화해서 전송
     // PEM 형식의 공개 키를 Forge Key 객체로 변환
     const serverPublicKey = forge.pki.publicKeyFromPem(serverPublicKeyPEM);
