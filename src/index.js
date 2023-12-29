@@ -10,6 +10,7 @@ import TossPayPal from './pages/Pay/TossPayPal';
 import PayPal from './pages/Pay/PayPal';
 import Chart from './pages/Chart';
 import Login from './pages/Login';
+import Test from './pages/Test';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
       <Route path="/paypal/*" element={<PayPal />} />
       <Route path="/chart" element={<Chart />} />
       <Route path="login" element={<Login />} />
+      <Route path="/openapitest" element={<Test />} />
     </Routes>
   </BrowserRouter>
 );
