@@ -11,6 +11,7 @@ import PayPal from './pages/Pay/PayPal';
 import Chart from './pages/Chart';
 import Login from './pages/Login';
 import Test from './pages/Test';
+import KakaoTest from './pages/KaKaoTest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,7 @@ root.render(
       <Route path="/chart" element={<Chart />} />
       <Route path="login" element={<Login />} />
       <Route path="/openapitest" element={<Test />} />
+      <Route path="/kakaotest" element={<KakaoTest />} />
     </Routes>
   </BrowserRouter>
 );
