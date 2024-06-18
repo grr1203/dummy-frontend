@@ -12,6 +12,7 @@ import Chart from './pages/Chart';
 import Login from './pages/Login';
 import Test from './pages/Test';
 import KakaoTest from './pages/KaKaoTest';
+import WebPush from './pages/WebPush';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +29,7 @@ root.render(
       <Route path="login" element={<Login />} />
       <Route path="/openapitest" element={<Test />} />
       <Route path="/kakaotest" element={<KakaoTest />} />
+      <Route path="/webpush" element={<WebPush />} />
     </Routes>
   </BrowserRouter>
 );
